@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Custom focus styles */
+*:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Custom node styles for React Flow */
+.react-flow__node {
+  @apply bg-white border border-gray-200 rounded-md shadow-sm p-3 transition-all duration-200;
+}
+
+.react-flow__node.selected {
+  @apply ring-2 ring-primary-500;
+}
+
+.react-flow__edge-path {
+  @apply stroke-gray-300 stroke-2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  @apply stroke-primary-500;
+}
+
+/* Custom tooltip */
+.tooltip {
+  @apply invisible absolute bg-gray-900 text-white text-xs rounded py-1 px-2 z-50;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible;
+}

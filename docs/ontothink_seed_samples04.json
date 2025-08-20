@@ -1,0 +1,862 @@
+[
+  {
+    "question": "自由意志是否真实存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "相容论：自由意志与决定论可以共存",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "自由在于行为符合理性意志而非随机性"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "道德责任不需要绝对的因果自由"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自由意志论：人具有非决定论的自主选择能力",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "第一人称的决策体验证明自由意志"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "量子不确定性为自由意志留下空间"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "如果行为由先前因素决定，如何称得上自由？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "随机性是否比决定论更支持自由意志？"
+      }
+    ]
+  },
+  {
+    "question": "数学真理是发现还是发明？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "柏拉图主义：数学对象独立存在并被发现",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "数学定理具有跨文化的普遍有效性"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "数学家常有'发现'的直觉体验"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "形式主义：数学是人类构建的形式系统",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "不同公理体系导致不同数学真理"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "数学史显示概念的演化特征"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "如果数学是发明，为何自然规律遵循数学？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "数学实体的存在如何被非数学方法验证？"
+      }
+    ]
+  },
+  {
+    "question": "道德价值是否独立于人类意识而存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "道德实在论：道德事实如同数学真理客观存在",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德进步现象暗示客观标准"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "道德争论预设客观答案的可能性"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "道德反实在论：价值是人类建构的产物",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "道德多样性反映文化相对性"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "无法用自然科学方法检测道德属性"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若道德客观存在，为何需要理性主体来认识？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "文化相对性是否必然否定道德客观性？"
+      }
+    ]
+  },
+  {
+    "question": "语言是否限制了我们思考的可能性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "语言决定论：思维被语言范畴所塑造",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "不同语言使用者表现出认知差异"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "无法言说的概念难以成为明确思想"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "思维优先论：思想可以超越语言表达",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "创造性思维常先于语言表述"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "非语言艺术表达证明超语言思维"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "如果思维超越语言，如何确保思想交流？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "语言差异导致的认知差异是否本质？"
+      }
+    ]
+  },
+  {
+    "question": "美是客观属性还是主观体验？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "美学客观主义：美存在于对象固有属性",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "黄金比例等数学模式具有普遍美感"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "伟大艺术品经得起时间检验"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "美学主观主义：美取决于观察者反应",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "审美趣味存在巨大个体差异"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "神经美学证明美与脑活动相关"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若美是客观的，为何需要审美主体？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "文化共通的审美标准是否证明客观性？"
+      }
+    ]
+  },
+  {
+    "question": "科学理论是否逐渐逼近真理？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "科学实在论：理论进步是真理的近似",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "科学预测能力的持续提升"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "不同理论对同一实体的趋同指称"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "反实在论：理论只是经验拯救工具",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "科学史上范式转换的非累积性"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "不可观察实体的理论不可判定"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若理论只是工具，为何自然表现出规律性？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "真理近似论如何解释科学革命中的断裂？"
+      }
+    ]
+  },
+  {
+    "question": "个人同一性由什么构成？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "心理连续性理论：记忆与心理连接决定同一性",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "失忆症患者的人格改变现象"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "思想实验支持心理标准（如忒修斯之船）"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "身体连续性理论：物理身体保证同一性",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "法律身份基于生物特征"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "完全记忆复制可能导致多个'我'"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "如果细胞全部更换，身体如何保持同一？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "心理标准如何解释记忆的不可靠性？"
+      }
+    ]
+  },
+  {
+    "question": "人工智能是否可能具有真正的理解力？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "强人工智能立场：适当编程可实现理解",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "图灵测试显示无法区分智能"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "理解是信息处理的形式结果"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "中文房间论证：符号操作不等于理解",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "语法与语义的根本区别"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "缺乏内在的意向性状态"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若理解只是外部行为，内在状态是否多余？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "人类理解是否也可能只是复杂符号操作？"
+      }
+    ]
+  },
+  {
+    "question": "时间是否真实存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "永恒论：过去现在未来同样真实",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "相对论显示时间的空间化特征"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "时间流逝感可能只是认知错觉"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "现时论：只有当下时刻是实在的",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "与人类直接经验一致"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "变化需要真实的'现在'作为基础"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若时间不流动，变化如何可能？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "'现在'的边界如何物理定义？"
+      }
+    ]
+  },
+  {
+    "question": "知识是否需要确证的基础？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "基础主义：知识需要不可纠正的基本信念",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "避免无限回溯问题"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "知觉经验提供直接知识"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "融贯论：知识是信念网络的相互支持",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "所有信念都可能被修正"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "整体论更符合科学实践"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "基本信念如何避免独断论？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "融贯性是否会导致与现实的脱节？"
+      }
+    ]
+  },
+  {
+    "question": "是否存在先验综合知识？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "康德主义：数学与部分形而上学属先验综合",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "7+5=12具有必然性又扩展知识"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "因果律不是分析命题但普遍适用"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "逻辑实证主义：所有先验知识都是分析的",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "数学可还原为逻辑定义"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "综合知识必须后验验证"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若数学是分析的，为何感觉具有内容？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如何解释不同几何体系的并存？"
+      }
+    ]
+  },
+  {
+    "question": "社会契约是否具有道德约束力？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "契约论：义务源于理性主体的同意",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "解释政治权威的合法性"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "避免自然状态的道德困境"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自然法理论：道德先于并约束任何契约",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "不公正契约无约束力"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "基本人权不可让渡"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若契约无约束力，社会秩序如何可能？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "自然法如何避免形而上学的预设？"
+      }
+    ]
+  },
+  {
+    "question": "痛苦是否具有内在价值？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "痛苦消极论：痛苦本质上是恶的",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "所有理性存在者都回避痛苦"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "痛苦阻碍生命繁荣"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "痛苦辩证论：痛苦可能具有建设性",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "痛苦促进人格成长与同理心"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "艺术创作常源于痛苦体验"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若痛苦有价值，是否应该主动寻求？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "痛苦的工具价值是否否定其内在恶？"
+      }
+    ]
+  },
+  {
+    "question": "概念是否必须通过经验获得？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "经验论：所有概念源于感觉经验",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "先天盲人无法理解颜色概念"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "抽象概念是感觉经验的复合"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "理性论：部分概念是天赋的",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "数学概念无法还原为经验"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "婴儿表现出先验认知结构"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若概念天赋，为何需要经验激活？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "经验如何解释概念的普遍有效性？"
+      }
+    ]
+  },
+  {
+    "question": "技术发展是否必然导致人的异化？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "技术批判论：工具理性压制人的本质",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "现代技术塑造单向度的人"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "数字时代导致真实交往的衰落"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "技术中立论：异化源于使用方式而非技术本身",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "技术扩展人类可能性"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "历史显示技术与人性的共同进化"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若技术塑造认知，如何区分工具与目的？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "技术自主性是否削弱人的控制权？"
+      }
+    ]
+  },
+  {
+    "question": "解释意识'难问题'的最佳路径是什么？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "泛心论：意识是物质的基本属性",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "避免突现论的形而上学困难"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "解释微观与宏观意识的连续性"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "消除唯物论：意识难题源于错误概念框架",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "类似'燃素说'的概念错误"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "神经科学将完全解释现象体验"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "泛心论如何解释无生命物质的意识？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "消除解释是否忽视了第一人称视角？"
+      }
+    ]
+  },
+  {
+    "question": "正义是否要求资源平等？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "平等主义：正义需要实质性的资源平等",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "抵消道德任意性因素的影响"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "确保所有人发展基本能力的条件"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自由至上主义：正义只要求程序公平",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "尊重个人选择导致的差异"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "再分配侵犯自我所有权"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若起点不平等，程序公平是否足够？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "资源平等如何应对个人责任问题？"
+      }
+    ]
+  },
+  {
+    "question": "哲学是否应该科学化？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "自然主义：哲学应延续科学方法",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "确保知识的公共可验证性"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "避免思辨的任意性"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "人文主义：哲学需保留规范性与先验性",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "科学无法解决价值与意义问题"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "概念分析不同于经验研究"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "科学方法能否处理规范性命题？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "非科学化的哲学如何避免相对主义？"
+      }
+    ]
+  },
+  {
+    "question": "存在是否优先于本质？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "存在主义：存在先于本质",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "人类通过选择创造自身本质"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "拒绝先定的普遍人性"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "本质主义：本质规定存在方式",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "生物物种具有本质属性"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "理性能力定义人的本质"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若存在优先，如何避免道德虚无主义？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "本质主义如何解释人的历史可变性？"
+      }
+    ]
+  },
+  {
+    "question": "宗教体验是否具有认知价值？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "宗教认识论：体验提供神圣实在的直接知识",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "与知觉经验类比"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "跨文化的相似神秘体验"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自然主义解释：宗教体验是心理现象",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "神经科学对神秘状态的解释"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "不同宗教的互斥真理主张"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若体验真实，为何需要信仰共同体？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "神经解释是否构成对宗教体验的否定？"
+      }
+    ]
+  }
+]

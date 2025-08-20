@@ -1,0 +1,905 @@
+[
+  {
+    "question": "自由意志是否与决定论相容？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "相容论：即使行为由因果决定，人仍可拥有自由意志。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "自由在于行为源于内在欲望与理性，而非外在强制。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "道德责任不依赖于‘绝对选择’，而依赖于理性回应能力。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自由意志主义：真正的自由要求非决定性的选择能力。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "若所有选择皆由前因决定，则‘本可以不如此’为假。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "道德责难预设了替代可能性，而决定论否定此可能性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若自由仅意味着无强制，那么被洗脑者是否也是自由的？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "量子不确定性是否足以支撑自由意志，抑或只是随机性？"
+      }
+    ]
+  },
+  {
+    "question": "道德真理是否客观存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "道德实在论：道德命题具有独立于信念的真值。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "我们能进行道德进步的判断，暗示存在客观标准。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "某些道德原则（如反对无端痛苦）具有跨文化普遍性。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "道德反实在论：道德是情感表达或社会建构。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "道德判断缺乏感知或科学验证的途径，无法指称客观事实。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "道德多样性表明其根植于文化实践而非普遍真理。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若道德是主观的，为何我们强烈谴责某些行为如种族灭绝？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如果道德真理存在，它们如何在自然世界中定位？"
+      }
+    ]
+  },
+  {
+    "question": "美的本质是否存在于对象之中？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "客观主义美学：美是对象的客观形式属性，如对称与和谐。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "数学与自然中普遍存在的黄金比例引发审美共鸣。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "不同文化对某些形式（如日出）表现出相似的审美反应。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "主观主义美学：美是感知者情感反应的投射。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "同一对象在不同人眼中可被评价为美或丑。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "审美体验依赖于个体心理结构与文化背景。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若美是客观的，为何艺术史中审美标准不断变迁？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若美完全主观，艺术批评是否沦为无意义的偏好表达？"
+      }
+    ]
+  },
+  {
+    "question": "知识是否必须基于确定的信念？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "基础主义：知识需要不可怀疑的信念基础。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "无限倒退的信念链无法支撑知识的确定性。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "笛卡尔式‘我思’提供自明的信念起点。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "融贯主义：知识是信念系统的整体一致性。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "所有经验信念都依赖理论框架，无法单独验证。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "科学理论通过解释力与一致性获得可信度，而非基础命题。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若基础信念不可错，为何历史上许多‘自明’信念被推翻？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "多个融贯但互斥的信念系统如何区分真伪？"
+      }
+    ]
+  },
+  {
+    "question": "自我是否是一个持续存在的实体？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "实体自我论：存在一个本质不变的‘我’作为意识的承载者。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "第一人称体验具有统一性与连续性，如记忆的归属感。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "法律与道德责任预设了跨时间的同一主体。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "休谟式束论：自我只是知觉的流动集合，无实质核心。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "内省无法发现恒定的‘我’，只发现不断变化的感知与情感。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "脑损伤可彻底改变人格，表明自我依赖于可变的神经过程。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若自我是束，为何我们有‘我是同一人’的强烈直觉？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若无持续自我，记忆的真实性如何保证？"
+      }
+    ]
+  },
+  {
+    "question": "恶的存在是否否定全知、全能、全善上帝的可能性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "神义论：恶的存在与上帝存在相容，因其服务于更高善。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德成长需要面对苦难与选择的自由。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "有限人类无法理解上帝的终极计划，恶可能是必要手段。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "逻辑反驳：全善全能者不会允许不必要的恶。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "自然恶（如地震）非人类自由所致，却造成巨大痛苦。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "存在可避免的极端苦难，表明上帝要么非全能，要么非全善。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若自由意志为恶的根源，上帝为何不创造只选择善的自由人？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若人类无法理解上帝计划，信仰是否陷入不可证伪的盲信？"
+      }
+    ]
+  },
+  {
+    "question": "人工智能能否拥有真正的意向性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "强人工智能论：适当编程的系统可具备语义内容与意向性。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "功能主义认为心理状态由功能角色决定，而非物质基底。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "若AI能通过图灵测试并持续适应环境，其符号具有指称功能。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "生物自然主义：意向性源于生物体的内在目的性与感受性。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "塞尔‘中文房间’思想实验表明语法操作不等于语义理解。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "机器缺乏生命驱动与具身经验，无法生成原始意向性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若意向性依赖生物基础，是否意味着意识不可人工实现？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如果AI行为与人类无法区分，区分‘真正’意向性是否还有意义？"
+      }
+    ]
+  },
+  {
+    "question": "时间是否真实存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "实在论：时间是独立于心灵的客观维度。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "物理定律（如熵增）具有时间方向性，表明时间不对称。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "宇宙演化与因果序列依赖时间结构。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "永恒主义（块宇宙）：过去、现在、未来同等真实，时间流动是幻觉。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "相对论中时间是时空四维连续体的一部分，无绝对‘现在’。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "‘现在’的体验依赖于意识过程，非时间本身的属性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若时间流动是幻觉，为何我们只能记忆过去而非未来？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如果未来已存在，自由意志是否被否定？"
+      }
+    ]
+  },
+  {
+    "question": "死亡是否是生命的终结？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "唯物主义观点：意识随大脑死亡而彻底消失。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "所有意识功能均依赖神经活动，脑死亡即功能终止。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "无可靠经验证据支持意识在体外持续存在。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "二元论或宗教观点：灵魂独立于身体，死亡是过渡而非终结。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "濒死体验报告一致的‘离体’与‘光明’感知，暗示意识可脱离大脑。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "道德宇宙要求死后报应以实现终极正义。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若灵魂存在，它如何与物理大脑交互而不违反能量守恒？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如果死亡是终结，人生意义是否因此被削弱？"
+      }
+    ]
+  },
+  {
+    "question": "语言是否决定了我们所能思考的范围？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "语言相对论（萨丕尔-沃尔夫假说）：语言结构塑造思维模式。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "某些语言缺乏未来时态或颜色词汇，使用者对时间或色彩的区分较弱。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "隐喻系统（如时间即空间）在语言中固化，影响抽象推理。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "普遍语法论：思维先于语言，语言是思想的表达工具。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "婴儿与非人类动物展现出无语言基础的认知能力。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "新概念与跨语言翻译表明思维可超越现有词汇限制。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若语言决定思维，科学革命中的新理论如何被构想？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "是否存在完全不可翻译的思想，还是语言总能逐步扩展？"
+      }
+    ]
+  },
+  {
+    "question": "社会契约是否是政治合法性的唯一基础？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "契约主义：政治权力合法性源于公民的理性同意。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "只有基于同意的权威才能避免将权力等同于暴力。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "民主制度通过选举与法律体现持续的集体同意。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "历史主义或有机论：合法性源于传统、文化延续与社会事实。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "多数现存国家非通过契约建立，而是历史演化的结果。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "共同体认同先于个体选择，个人无法脱离传统而理性同意。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "未明确表示同意的公民（如儿童）是否仍受契约约束？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若传统可赋予合法性，是否意味着改革永远面临正当性危机？"
+      }
+    ]
+  },
+  {
+    "question": "虚拟现实中的体验是否具有真实价值？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "体验主义：只要主观体验真实，其价值即真实。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "快乐、爱、成就感在虚拟中产生同样心理效应。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "现实与虚拟的界限在感知上无法绝对区分。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "实在论价值论：价值依赖于与真实世界的因果联系。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "虚拟成就缺乏真实世界的影响与挑战，易导致空虚感。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "道德行动需真实后果，虚拟善行无法替代现实责任。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "如果虚拟体验能持续带来幸福，追求它是否理性？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "‘真实’本身是否被过度神话，而忽视了体验的内在质量？"
+      }
+    ]
+  },
+  {
+    "question": "艺术的本质在于形式还是表达？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "形式主义：艺术价值在于结构、线条、色彩等自律关系。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "纯粹形式能激发审美情感，无需依赖外在内容。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "艺术自律性保障其独立于道德或政治功能。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "表现主义：艺术的核心是情感与精神的传达。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "伟大艺术往往源于艺术家深层情感体验，如梵高或贝多芬。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "观众通过共鸣获得净化（catharsis），此为艺术根本目的。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若形式决定一切，为何同一形式在不同语境中意义迥异？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若艺术仅为情感宣泄，如何区分艺术与纯粹情绪失控？"
+      }
+    ]
+  },
+  {
+    "question": "怀疑论是否可被彻底反驳？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "基础主义或外在主义：存在无需辩护的知识起点。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "感觉信念（如‘我看到红色’）在正常条件下可被默认为真。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "怀疑论本身依赖于理性与语言，而这些正是其试图怀疑的工具。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "激进怀疑论：所有经验知识均无法排除幻觉或欺骗可能。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "梦境与清醒体验在主观上无法区分。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "‘缸中之脑’假设表明感知可能完全与现实脱节。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若怀疑论无法被逻辑反驳，它是否因此成为最合理的立场？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "日常生活实践是否已隐含地拒绝了怀疑论，即使无法逻辑证伪？"
+      }
+    ]
+  },
+  {
+    "question": "人类是否拥有超越自然法则的尊严？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "康德式观点：人作为理性存在者具有内在尊严，不可被工具化。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德律令要求将人视为目的本身，而非达成目的的手段。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "自主性赋予人类自我立法的能力，超越因果决定。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自然主义观点：人类是自然产物，尊严是社会建构的价值赋予。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "生物学表明人类与其他动物存在连续性，无本质断裂。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "‘尊严’概念随历史与文化变化，非普遍恒定属性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若尊严依赖理性，如何对待无理性能力者（如严重智障）的道德地位？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "自然主义是否必然导致价值虚无，还是可重建世俗尊严？"
+      }
+    ]
+  },
+  {
+    "question": "真理是否是被证实的信念？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "符合论：真理是信念与客观事实的对应关系。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "即使某信念被广泛证实，若与事实不符，仍为假。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "科学进步常推翻‘被证实’的旧理论，表明证实不等于真理。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "实用主义：真理即具有实践效用、能成功指导行动的信念。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "一个信念若在长期实践中稳定可靠，即可视为真。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "‘事实’本身依赖于可操作的验证程序，无法脱离实践。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若真理是符合事实，我们如何在不依赖信念的情况下接触‘事实’？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "实用主义是否将真理降格为便利，从而无法追求客观真相？"
+      }
+    ]
+  },
+  {
+    "question": "乌托邦理想是否值得追求？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "理想主义：乌托邦提供批判现实与激励改革的规范愿景。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "没有理想指引，社会易陷入犬儒主义与停滞。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "历史进步（如废除奴隶制）源于对更好世界的想象。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "现实主义：乌托邦追求常导致极权与暴力，因其忽视人性复杂性。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "20世纪诸多灾难源于以‘完美社会’为名的强制改造。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "人性中的自私与有限理性使完美社会不可实现。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "是否可能追求理想而不陷入强制与暴力？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "若放弃乌托邦，如何避免社会被既得利益永久固化？"
+      }
+    ]
+  },
+  {
+    "question": "梦境中的行为是否具有道德意义？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "无道德意义：梦境无真实后果，且主体缺乏控制力。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德责任预设意图与行动能力，而梦中行为非有意选择。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "梦中伤害他人未造成实际痛苦，故不构成道德过错。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "有道德意义：梦境反映深层欲望与人格结构，具自我认知价值。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "弗洛伊德认为梦是潜意识的表达，揭示被压抑的道德冲突。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "反复出现的恶意梦境可能表明需反思的内在倾向。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若梦境完全反映潜意识，我们是否应对无法控制的欲望负责？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "随着清醒梦技术发展，梦中行为的道德责任是否会增强？"
+      }
+    ]
+  },
+  {
+    "question": "沉默是否可以被视为一种语言行为？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "是：沉默在特定语境中具有言说的语用功能。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "奥斯汀言语行为理论中，沉默可构成‘施行行为’，如默许或抗议。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "文化中沉默常表达尊重、哀悼或拒绝，具明确交际意图。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "否：沉默是语言的缺席，不能承载命题内容。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "语言行为需符号系统与规则，沉默缺乏结构与可分析性。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "沉默的意义完全依赖语境推断，具有过度模糊性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若沉默可表意，是否存在‘被迫沉默’的言语权利侵犯？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "当沉默被解释为同意，是否可能导致权力滥用？"
+      }
+    ]
+  },
+  {
+    "question": "历史是否有内在目的或方向？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "目的论历史观：历史朝向自由、理性或人类解放演进。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "黑格尔式‘理性的狡计’认为历史是精神自我实现的过程。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "全球民主化与人权共识显示进步趋势。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "非目的论：历史是偶然事件的集合，无预设方向。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "重大转折（如战争、瘟疫）常由不可预测因素决定。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "‘进步’是回溯性建构，许多文明曾衰落或停滞。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若历史无目的，人类行动的意义是否被消解？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "目的论是否为意识形态服务，用以正当化当前秩序？"
+      }
+    ]
+  },
+  {
+    "question": "隐私是否是现代社会的奢侈品而非基本权利？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "基本权利论：隐私是人格发展与自主性的前提。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "无隐私则无法形成独立思想与亲密关系，易受操控。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "隐私权在国际人权文件中被明确承认。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "奢侈品论：在安全与效率优先的时代，隐私需让位于集体利益。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "反恐与公共卫生等危机要求数据透明与监控。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "数字原住民对‘分享’的常态削弱了传统隐私观念。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "当监控常态化，‘无罪者无惧’的论点是否掩盖了权力滥用风险？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "如果隐私消失，社会是否将趋向于行为同质化与自我审查？"
+      }
+    ]
+  }
+]

@@ -1,0 +1,776 @@
+[
+  {
+    "question": "人工智能能否拥有真正的道德主体地位？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "功能主义：只要系统能执行道德推理与责任承担，即可视为道德主体。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德判断可被形式化为算法，若执行无误，则具备同等规范性。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "责任归属可由系统可解释性与可追溯性保证，无需生物基础。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "现象学立场：缺乏切身感受与生命脆弱性的存在无法承担道德责任。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "道德情感源于具身经验与生存焦虑，AI无此生存论根基。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "责任预设了“可被伤害”与“可被惩罚”的同一性，AI缺乏此同一性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若AI能完美模拟悔悟与赔偿，是否仍缺“真实”责任？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "人类婴儿亦缺乏生存焦虑，为何可逐步获得道德地位？"
+      }
+    ]
+  },
+  {
+    "question": "美是对象的属性还是观者的投射？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "客观主义：美是对象形式与比例之内在完满性。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "黄金比例与对称性在跨文化中皆引发愉悦，指向客观属性。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "若无客观美，则无法解释为何某些作品穿越时代仍被称颂。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "建构主义：美是历史与社会语境中的意义生成。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "同一对象在不同时代被评价为丑或美，证明其非内禀属性。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "美的语言游戏随权力与意识形态变迁，无超越性标准。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若美完全主观，为何存在“审美文盲”这一贬义？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "客观美如何解释“残缺之美”与“不对称之美”？"
+      }
+    ]
+  },
+  {
+    "question": "时间是否独立于意识而存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "物理实在论：时间是宇宙维度，与测量者无关。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "相对论将时间列为第四维度，其曲率可被物质能量决定。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "宇宙微波背景辐射的各向同性暗示宇宙历法的客观性。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "现象学时间观：时间性源于意识的滞留与前摄结构。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "“现在”无法被孤立，总是携带着刚逝去的过去与即将到来的未来。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "若无意识，事件序列只是并存而无“流逝”可言。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若时间依赖意识，宇宙大爆炸之前的时间如何言说？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "物理方程中的 t 变量是否只是工具，而非实体？"
+      }
+    ]
+  },
+  {
+    "question": "个人同一性是否依赖于记忆的连续性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "心理连续论：记忆链条构成自我同一性。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "若记忆完全断裂，则无法区分我与他人之心理史。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "法律与道德责任皆以记忆可追溯性为判准。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "生物有机论：同一性根植于生命组织的持续自我维持。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "记忆可被篡改或植入，而生物连续性更难伪造。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "植物人与失忆者仍被视为同一人，说明记忆非必要条件。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若记忆被数字化并传输，接收者是否为原人？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "生物连续性是否只是空间-时间轨迹的另一种描述？"
+      }
+    ]
+  },
+  {
+    "question": "数学对象是发现还是发明？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "柏拉图主义：数学实体独立于心灵而存在。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "素数分布规律在被人类认知前已成立，故非人造。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "数学真理的必然性无法由经验归纳得出，指向先验实在。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "形式主义：数学是符号操作的游戏，无本体论承诺。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "不同公理系统可导出不相容定理，显示其约定性。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "数学对象的可废止性（如无穷小被极限取代）支持工具主义。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若数学被发现，为何存在选择公理之争议？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "形式主义如何解释数学在物理世界中的“不可思议的有效性”？"
+      }
+    ]
+  },
+  {
+    "question": "自由意志是否与决定论兼容？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "相容论：自由在于行动源于自身理由而非外部强制。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "即使决定论为真，理性主体的因果链仍构成“自主性”。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "道德评价预设行为者有能力响应理由，而非随机性。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "自由意志主义：真正自由需要非决定论与替代可能性。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "若无替代选择，则“我本可不做”成为空洞，消解责任。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "量子不确定性为自由留下本体论空间。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若自由仅指无强制，奴隶与自由人区别何在？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "量子随机性如何转化为可控的“意愿”而非噪声？"
+      }
+    ]
+  },
+  {
+    "question": "死亡是否对死者本身构成伤害？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "剥夺论：死亡剥夺了未来可能的善，故为伤害。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "若个体本可再活十年，其福祉被削减，符合伤害定义。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "我们哀悼逝者，正因其不再拥有经验，显示价值丧失。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "无主体论：死后无体验主体，故无伤害可言。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "伤害需有受苦者，而死亡终结了受苦之可能。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "将“可能未来”视为利益，会导致对未出生者的亏欠悖论。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若死亡非伤害，为何恐惧死亡而非出生前的虚无？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "剥夺论是否预设了跨时间同一性的形而上学？"
+      }
+    ]
+  },
+  {
+    "question": "语言能否完全表达思想？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "可表达论：思想即内部言语，语言边界即思想边界。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "私人语言论证显示无公共语言则无思想内容。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "任何模糊思想经足够阐释均可被言明，差异仅在实践限制。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "不可尽意论：思想具有前语言图式与质感，语言仅部分映射。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "诗与音乐唤起不可译之体验，显示语言剩余。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "神经科学揭示思维先于语言，以非符号格式存在。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若语言不能尽意，我们如何知道思想被“遗漏”？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "“前语言”思维是否只是未被言说的潜在语言？"
+      }
+    ]
+  },
+  {
+    "question": "正义是否应优先于善？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "义务论：正义作为权利框架优先于任何善观念。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "若善优先，则多数人的幸福可正当化对少数的压迫。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "权利作为“正当”独立于“好”，避免价值一元论。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "目的论：正义必须服务于共同善，否则空洞。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "权利若无助于人类繁荣，则成为程序空转。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "社群传统中的正义观念本就嵌入对善的理解。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若正义优先，如何应对道德异乡人的不可调和冲突？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "共同善是否隐含多数霸权，反而消解正义？"
+      }
+    ]
+  },
+  {
+    "question": "是否存在不可被言说的神秘体验？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "神秘实在论：存在超越语言的终极实在。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "否定神学传统证明语言在终极处自我瓦解。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "神秘体验具有一致性与转化力，指向非概念真实。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "语言建构论：所谓“不可说”只是语言游戏的边界。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "“神秘”乃语境限制，可通过隐喻、诗扩展表达。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "宣称不可说本身已是一种语言行为，隐含自我矛盾。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若体验不可说，如何区分真实神秘与幻觉？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "语言的扩展是否只是延迟而非解决不可说困境？"
+      }
+    ]
+  },
+  {
+    "question": "自然是否具有内在价值？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "内在价值论：生态系统本身即目的，非仅工具。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "物种多样性具有“自身善”，不因人类偏好而增减。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "若价值皆相对，则物种灭绝仅是人类损失，而非自然之恶。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "人类中心主义：价值由评价者赋予，自然本身中性。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "“内在价值”一词无法脱离人类语言与利益系统。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "若无主体体验，岩石与生态系统无善恶可言。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若自然无内在价值，为何对人工毁灭感到“惋惜”？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "评价者是否必须与被评价者属于同一价值领域？"
+      }
+    ]
+  },
+  {
+    "question": "无限是否能在现实世界中实现？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "潜无限论：无限仅作为过程极限存在。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "物理量如能量、熵在可观测宇宙皆有限。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "数学的实无限仅为方便构造，无对应实体。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "实无限论：宇宙可能具有无限拓扑或永恒暴胀。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "某些宇宙模型容许无限空间体积与事件总数。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "量子场论中基态真空可视为无限自由度系统。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若无限未实现，如何解释数学对物理的无限描述力？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "实无限是否因不可观测而沦为形而上学？"
+      }
+    ]
+  },
+  {
+    "question": "道德真理是否客观存在？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "道德实在论：存在独立于心灵的道德事实。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "道德命题可具真值，如“折磨无辜是错误的”为真。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "跨文化道德共识（如反对无故杀戮）指向客观性。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "反实在论：道德是情感投射或社会契约。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "道德分歧的持久性与不可解性显示无客观事实。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "进化心理学解释道德为群体生存策略，无超越性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若道德非实在，为何“进步”观念仍有意义？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "客观道德事实如何与因果封闭的物理世界互动？"
+      }
+    ]
+  },
+  {
+    "question": "感知是否直接指向外部对象？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "直接实在论：感知直接呈现外部对象本身。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "幻觉与真实感知在因果链上不同，不否定正常感知的直接性。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "进化压力要求感知提供环境信息，中介表征将增成本。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "表征主义：感知只提供内部表征，对象不可直接通达。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "知觉恒常性与错觉显示大脑主动建构世界模型。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "神经信号编码与外部属性之间存在多重可实现性。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若表征为中介，如何解释感知的即时性与透明性？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "直接实在论是否隐含朴素物理主义的形而上学预设？"
+      }
+    ]
+  },
+  {
+    "question": "是否存在集体意识？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "整体论：群体可拥有不可还原为个体的意识状态。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "蜂群与蚁群展现分布式决策，类似单一认知系统。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "互联网与人类交互网络可能出现涌现的“全球脑”。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "个体主义：意识需统一第一人称视角，集体缺乏此视角。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "无单一感受场与记忆整合，群体无法形成连续自我。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "归因于集体的意识是拟人化谬误，实为个体间互动。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若集体无意识，为何群体情绪会“感染”？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "个体视角是否只是更复杂的集体信息过滤器？"
+      }
+    ]
+  },
+  {
+    "question": "知识是否必须基于确定性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "古典基础论：知识需从不可错基础推导。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "若允许错误可能，则信念与知识无法区分。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "数学公理系统展示从确定性到真命题的可靠路径。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "可错论：知识可在可修正基础上通过证成获得。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "科学理论虽可证伪，却在实践中产生可靠知识。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "要求确定性导致怀疑主义，否定日常与科学认知。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "可错论是否降低知识标准，使其与“有根据的信念”混同？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "“确定性”本身是否也是一种历史可变的概念？"
+      }
+    ]
+  },
+  {
+    "question": "上帝存在的本体论证明是否有效？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "支持有效：存在作为完满性之一必须被包含。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "若“最完满存在”仅存在于理解，则仍可设想更完满之存在，矛盾。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "模态逻辑使“必然存在”在可能世界框架下成立。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "反对有效：存在非谓词，不能由概念推导现实。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "康德批判：存在是设定而非属性，概念不包含存在。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "可设想“必然不存在之存在”，显示概念与存在脱节。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若本体论证明无效，为何其形式在数学中可推导对象存在？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "“完满”概念是否预设了人类中心的价值等级？"
+      }
+    ]
+  },
+  {
+    "question": "虚拟现实的体验是否具有真实性？",
+    "standpoints": [
+      {
+        "id": "standpoint_1",
+        "text": "体验实在论：真实即有效因果作用，虚拟体验真实影响情感与行为。",
+        "arguments": [
+          {
+            "id": "argument_1_1",
+            "text": "VR疼痛与恐惧激活相同神经通路，具有现象学真实性。"
+          },
+          {
+            "id": "argument_1_2",
+            "text": "社会互动在虚拟世界中同样建立真实关系与责任。"
+          }
+        ]
+      },
+      {
+        "id": "standpoint_2",
+        "text": "基底实在论：真实必须基于非模拟的物理因果链。",
+        "arguments": [
+          {
+            "id": "argument_2_1",
+            "text": "虚拟对象缺乏时空占据与能量交换，故非真实。"
+          },
+          {
+            "id": "argument_2_2",
+            "text": "体验的可随时中断性与可编程性削弱其本体地位。"
+          }
+        ]
+      }
+    ],
+    "counter_questions": [
+      {
+        "id": "counter_question_1",
+        "text": "若真实需物理基底，梦境体验是否亦属虚假？"
+      },
+      {
+        "id": "counter_question_2",
+        "text": "物理因果链本身是否也可能是更高层模拟？"
+      }
+    ]
+  }
+]
