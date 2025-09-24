@@ -1,13 +1,13 @@
 {
   "model": {
     "base_model": "THUDM/chatglm3-6b",
-    "output_dir": "/Users/barryzhang/myDev3/OntoThink_V4/models/chatglm3-ontothink",
+    "output_dir": "/workspace/code/OntoThink_V4/models/chatglm3-ontothink",
     "max_seq_length": 2048,
     "trust_remote_code": true
   },
   "data": {
-    "raw_data_dir": "/Users/barryzhang/myDev3/OntoThink_V4/backend/data/processed",
-    "optimized_data_dir": "/Users/barryzhang/myDev3/OntoThink_V4/backend/data/optimized",
+    "raw_data_dir": "/workspace/code/OntoThink_V4/backend/data/processed",
+    "optimized_data_dir": "/workspace/code/OntoThink_V4/backend/data/optimized",
     "expand_samples": 300,
     "test_size": 0.1,
     "val_size": 0.1
@@ -48,7 +48,7 @@
   },
   "logging": {
     "report_to": "tensorboard",
-    "logging_dir": "/Users/barryzhang/myDev3/OntoThink_V4/logs/training",
+    "logging_dir": "/workspace/code/OntoThink_V4/logs/training",
     "log_level": "info"
   },
   "validation": {

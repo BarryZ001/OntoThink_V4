@@ -7,11 +7,17 @@ export NCCL_DEBUG=INFO
 export NCCL_IB_DISABLE=1
 export NCCL_P2P_DISABLE=1
 
-# 模型和数据路径
+# 模型和数据路径 - 自动检测
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BACKEND_ROOT="$(dirname "$SCRIPT_DIR")"
+ONTOTHINK_ROOT="$(dirname "$BACKEND_ROOT")"
+
 MODEL_NAME="THUDM/chatglm3-6b"
-DATA_PATH="/Users/barryzhang/myDev3/OntoThink_V4/backend/data/processed"
-OUTPUT_DIR="/Users/barryzhang/myDev3/OntoThink_V4/models/chatglm3-ontothink"
-LOG_DIR="/Users/barryzhang/myDev3/OntoThink_V4/logs/training"
+DATA_PATH="$ONTOTHINK_ROOT/backend/data/processed"
+OUTPUT_DIR="$ONTOTHINK_ROOT/models/chatglm3-ontothink"
+LOG_DIR="$ONTOTHINK_ROOT/logs/training"
+
+echo "📁 项目根目录: $ONTOTHINK_ROOT"
 
 # 创建必要目录
 mkdir -p $OUTPUT_DIR

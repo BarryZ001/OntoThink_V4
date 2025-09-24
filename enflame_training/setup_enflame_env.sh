@@ -5,10 +5,14 @@ set -e
 
 echo "🚀 配置OntoThink燧原T20训练环境..."
 
-# 设置基础路径
-ONTOTHINK_ROOT="/Users/barryzhang/myDev3/OntoThink_V4"
+# 设置基础路径 - 自动检测
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TRAINING_ROOT="$(dirname "$SCRIPT_DIR")"
+ONTOTHINK_ROOT="$(dirname "$TRAINING_ROOT")"
 ENFLAME_ROOT="${ONTOTHINK_ROOT}/FromEnflame/TopsRider_t2x_2.5.136_deb_amd64/ai_development_toolkit/distributed"
-TRAINING_ROOT="${ONTOTHINK_ROOT}/enflame_training"
+
+echo "📁 项目根目录: $ONTOTHINK_ROOT"
+echo "📁 训练目录: $TRAINING_ROOT"
 
 # 创建训练目录结构
 mkdir -p ${TRAINING_ROOT}/{models,datasets,logs,configs,scripts}

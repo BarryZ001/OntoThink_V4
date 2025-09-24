@@ -42,7 +42,7 @@ class ModelArguments:
 @dataclass
 class DataArguments:
     data_path: str = field(
-        default="/Users/barryzhang/myDev3/OntoThink_V4/backend/data/processed",
+        default="/workspace/code/OntoThink_V4/backend/data/processed",
         metadata={"help": "Path to the training data"}
     )
     max_seq_length: int = field(

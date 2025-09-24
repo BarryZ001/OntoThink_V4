@@ -15,7 +15,15 @@ import shutil
 
 class OntoThinkTrainingManager:
     def __init__(self, config_path: str = None):
-        self.base_dir = Path("/Users/barryzhang/myDev3/OntoThink_V4")
+        # 自动检测项目根目录
+        current_dir = Path.cwd()
+        if "OntoThink_V4" in str(current_dir):
+            while current_dir.name != "OntoThink_V4" and current_dir.parent != current_dir:
+                current_dir = current_dir.parent
+            self.base_dir = current_dir
+        else:
+            self.base_dir = Path("/workspace/code/OntoThink_V4")
+        
         self.config = self.load_config(config_path)
         
     def load_config(self, config_path: str = None) -> Dict[str, Any]:
