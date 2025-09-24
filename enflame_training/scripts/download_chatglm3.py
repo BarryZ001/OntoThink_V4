@@ -142,6 +142,15 @@ def main():
     
     # 确保在正确的目录
     model_dir = Path(__file__).parent.parent / "models" / "THUDM" / "chatglm3-6b"
+    
+    # 如果目录存在但为空或不完整，先清理
+    if model_dir.exists():
+        files = list(model_dir.glob("*"))
+        if not files or not any(f.name == "config.json" for f in files):
+            print(f"🧹 清理不完整的目录: {model_dir}")
+            import shutil
+            shutil.rmtree(model_dir)
+    
     model_dir.mkdir(parents=True, exist_ok=True)
     os.chdir(model_dir)
     
