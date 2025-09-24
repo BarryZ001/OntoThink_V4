@@ -1,0 +1,58 @@
+# OntoThink项目完整依赖清单
+# 适用于Python 3.8+
+
+# ===== 核心框架 =====
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.2
+
+# ===== 数据库 =====
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.12.1
+
+# ===== 认证和安全 =====
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+
+# ===== HTTP和网络 =====
+httpx==0.25.1
+requests>=2.31.0
+aiohttp>=3.8.0
+
+# ===== 环境配置 =====
+python-dotenv>=1.0.0
+
+# ===== 数据处理和工具 =====
+tqdm>=4.66.1
+loguru>=0.7.2
+backoff>=2.2.1
+pandas>=1.5.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# ===== 深度学习和AI训练 =====
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+accelerate>=0.24.0
+peft>=0.6.0
+bitsandbytes>=0.41.0
+tensorboard>=2.14.0
+
+# ===== 燧原T20专用 (如果可用) =====
+# torch_gcu  # 燧原专用PyTorch，需要从燧原工具包安装
+# ptex       # 燧原专用扩展，需要从燧原工具包安装
+# collie_lm  # 燧原专用训练库，需要从燧原工具包安装
+# deepspeed  # 燧原优化版本，需要从燧原工具包安装
+
+# ===== 开发和测试 =====
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+
+# ===== 可选：Jupyter支持 =====
+jupyter>=1.0.0
+ipykernel>=6.25.0

@@ -90,10 +90,16 @@ if [ ! -f "finetune_chatglm3_for_multiturn_original.py" ]; then
     cp finetune_chatglm3_for_multiturn.py finetune_chatglm3_for_multiturn_original.py
 fi
 
-# 使用python3.8启动分布式训练
+# 检测Python命令
+PYTHON_CMD="python3"
+if command -v python3.8 &> /dev/null; then
+    PYTHON_CMD="python3.8"
+fi
+
+# 启动分布式训练
 LOG_FILE="${LOG_DIR}/ontothink_training_$(date +%Y%m%d_%H%M%S).log"
 
-python3.8 -u -m torch.distributed.launch \
+$PYTHON_CMD -u -m torch.distributed.launch \
     --nproc_per_node=8 \
     --standalone \
     --use_env finetune_chatglm3_for_multiturn.py \
@@ -145,7 +151,7 @@ EOF
     
     # 运行简单验证
     echo "🔍 开始模型验证..."
-    python3.8 ${ENFLAME_ROOT}/scripts/validate_enflame_model.py \
+    $PYTHON_CMD ${ENFLAME_ROOT}/scripts/validate_enflame_model.py \
         --model_path $OUTPUT_DIR \
         --output_path "${OUTPUT_DIR}/validation_results.json"
 else
