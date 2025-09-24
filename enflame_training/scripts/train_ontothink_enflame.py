@@ -12,7 +12,17 @@ import time
 
 class OntoThinkEnflameTrainer:
     def __init__(self):
-        self.ontothink_root = Path("/Users/barryzhang/myDev3/OntoThink_V4")
+        # 自动检测运行环境
+        current_dir = Path.cwd()
+        if "OntoThink_V4" in str(current_dir):
+            # 找到项目根目录
+            while current_dir.name != "OntoThink_V4" and current_dir.parent != current_dir:
+                current_dir = current_dir.parent
+            self.ontothink_root = current_dir
+        else:
+            # 默认路径
+            self.ontothink_root = Path("/workspace/code/OntoThink_V4")
+        
         self.enflame_root = self.ontothink_root / "enflame_training"
         self.backend_data = self.ontothink_root / "backend" / "data" / "processed"
         
@@ -26,10 +36,22 @@ class OntoThinkEnflameTrainer:
             print("❌ 未找到燧原工具包")
             return False
         
-        # 检查是否已设置环境
-        llm_scripts = self.enflame_root / "llm_scripts"
-        if not llm_scripts.exists():
-            print("⚠️  燧原环境未配置，正在配置...")
+        # 检查LLM脚本是否可用
+        llm_scripts_paths = [
+            enflame_tools / "ai_development_toolkit" / "distributed",
+            enflame_tools / "distributed" / "llm_scripts_1.0.40",
+            self.enflame_root / "llm_scripts"
+        ]
+        
+        llm_scripts_found = False
+        for llm_path in llm_scripts_paths:
+            if llm_path.exists():
+                print(f"✅ 找到LLM脚本目录: {llm_path}")
+                llm_scripts_found = True
+                break
+        
+        if not llm_scripts_found:
+            print("⚠️  燧原LLM脚本未找到，正在配置...")
             return self.setup_environment()
         
         print("✅ 燧原T20环境检查通过")

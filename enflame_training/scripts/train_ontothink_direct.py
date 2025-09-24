@@ -9,9 +9,22 @@ import subprocess
 import argparse
 from pathlib import Path
 
+def get_project_root():
+    """获取项目根目录"""
+    current_dir = Path.cwd()
+    if "OntoThink_V4" in str(current_dir):
+        # 找到项目根目录
+        while current_dir.name != "OntoThink_V4" and current_dir.parent != current_dir:
+            current_dir = current_dir.parent
+        return current_dir
+    else:
+        # 默认路径
+        return Path("/workspace/code/OntoThink_V4")
+
 def check_model_exists():
     """检查ChatGLM3模型是否存在"""
-    model_path = Path("/workspace/code/OntoThink_V4/enflame_training/models/THUDM/chatglm3-6b")
+    base_dir = get_project_root()
+    model_path = base_dir / "enflame_training/models/THUDM/chatglm3-6b"
     
     if not model_path.exists():
         print(f"❌ 模型目录不存在: {model_path}")
@@ -27,7 +40,7 @@ def check_model_exists():
 
 def check_training_data():
     """检查训练数据是否存在"""
-    base_dir = Path("/workspace/code/OntoThink_V4")
+    base_dir = get_project_root()
     data_paths = [
         base_dir / "backend/data/processed/train.jsonl",
         base_dir / "backend/data/processed/val.jsonl"
@@ -45,7 +58,7 @@ def prepare_enflame_data():
     """准备燧原格式的训练数据"""
     print("📊 准备燧原训练数据...")
     
-    base_dir = Path("/workspace/code/OntoThink_V4")
+    base_dir = get_project_root()
     script_path = base_dir / "enflame_training/scripts/prepare_enflame_data.py"
     input_dir = base_dir / "backend/data/processed"
     output_dir = base_dir / "enflame_training/datasets/ontothink_multiturn"
@@ -77,7 +90,7 @@ def start_training():
     """启动燧原训练"""
     print("🚀 启动OntoThink燧原T20训练...")
     
-    base_dir = Path("/workspace/code/OntoThink_V4")
+    base_dir = get_project_root()
     training_script = base_dir / "enflame_training/scripts/ontothink_chatglm3_enflame.sh"
     
     if not training_script.exists():
