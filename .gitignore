@@ -66,3 +66,6 @@ data/processed/
 *.pt
 *.pkl
 *.joblib
+
+# Enflame toolkit (exclude from version control)
+FromEnflame/

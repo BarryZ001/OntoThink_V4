@@ -1,0 +1,70 @@
+{
+  "model": {
+    "base_model": "THUDM/chatglm3-6b",
+    "output_dir": "/Users/barryzhang/myDev3/OntoThink_V4/models/chatglm3-ontothink",
+    "max_seq_length": 2048,
+    "trust_remote_code": true
+  },
+  "data": {
+    "raw_data_dir": "/Users/barryzhang/myDev3/OntoThink_V4/backend/data/processed",
+    "optimized_data_dir": "/Users/barryzhang/myDev3/OntoThink_V4/backend/data/optimized",
+    "expand_samples": 300,
+    "test_size": 0.1,
+    "val_size": 0.1
+  },
+  "training": {
+    "num_gpus": 8,
+    "batch_size_per_gpu": 2,
+    "gradient_accumulation_steps": 4,
+    "num_epochs": 3,
+    "learning_rate": 5e-5,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.03,
+    "lr_scheduler_type": "cosine",
+    "use_lora": true,
+    "lora_r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.05,
+    "q_lora": true,
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "eval_steps": 100,
+    "save_steps": 200,
+    "logging_steps": 10,
+    "save_total_limit": 3
+  },
+  "optimization": {
+    "optim": "adamw_torch",
+    "dataloader_pin_memory": false,
+    "ddp_find_unused_parameters": false,
+    "tf32": true
+  },
+  "deepseek": {
+    "api_key": "",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "concurrent_requests": 3
+  },
+  "logging": {
+    "report_to": "tensorboard",
+    "logging_dir": "/Users/barryzhang/myDev3/OntoThink_V4/logs/training",
+    "log_level": "info"
+  },
+  "validation": {
+    "test_questions": [
+      "人工智能是否能够真正理解语言？",
+      "艺术创作中的情感与技巧哪个更重要？",
+      "在多元文化社会中，如何定义共同价值观？",
+      "科学进步是否总是带来道德进步？",
+      "个人隐私与社会安全之间的界限在哪里？"
+    ],
+    "generation_config": {
+      "max_new_tokens": 2048,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "do_sample": true,
+      "repetition_penalty": 1.1
+    }
+  }
+}
