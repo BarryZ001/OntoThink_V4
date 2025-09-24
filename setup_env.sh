@@ -27,7 +27,9 @@ fi
 
 # 创建虚拟环境
 echo "📦 创建Python虚拟环境..."
-if [ ! -d "venv" ]; then
+if [ ! -d "venv" ] || [ ! -f "venv/bin/activate" ]; then
+    echo "🔧 重新创建虚拟环境..."
+    rm -rf venv
     $PYTHON_CMD -m venv venv
     echo "✅ 虚拟环境创建完成"
 else
@@ -36,7 +38,12 @@ fi
 
 # 激活虚拟环境
 echo "🔄 激活虚拟环境..."
-source venv/bin/activate
+if [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
+    echo "✅ 虚拟环境激活成功"
+else
+    echo "❌ 虚拟环境激活文件不存在，跳过激活"
+fi
 
 # 升级pip
 echo "📦 升级pip..."
