@@ -89,6 +89,7 @@ echo "🔥 启动OntoThink ChatGLM3训练..."
 # 查找并切换到燧原ChatGLM3脚本目录
 CHATGLM3_SCRIPT_DIRS=(
     "${ONTOTHINK_ROOT}/FromEnflame/ai_development_toolkit/distributed/llm_scripts_1.0.40/finetuning/chatglm3"
+    "/installer/topsrider_extracted/TopsRider_installer/ai_development_toolkit/distributed/llm_scripts_1.0.40/finetuning/chatglm3"
     "${ONTOTHINK_ROOT}/FromEnflame/distributed/llm_scripts_1.0.40/finetuning/chatglm3"
     "${ENFLAME_ROOT}/llm_scripts/finetuning/chatglm3"
 )
