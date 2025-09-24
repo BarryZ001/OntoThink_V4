@@ -42,19 +42,24 @@ source venv/bin/activate
 echo "📦 升级pip..."
 python -m pip install --upgrade pip
 
-# 安装基础依赖
+# 安装基础依赖 (排除torch等燧原已提供的包)
 echo "📦 安装项目依赖..."
+echo "⚠️  跳过torch相关依赖，使用燧原T20环境提供的版本"
 pip install -r requirements.txt
 
 # 检查是否有燧原工具包
 if [ -d "FromEnflame" ]; then
-    echo "🔥 检测到燧原工具包，配置燧原环境..."
+    echo "🔥 检测到燧原工具包，使用燧原专用依赖配置..."
+    
+    # 使用燧原专用requirements
+    echo "📦 安装燧原环境专用依赖..."
+    pip install -r requirements-enflame.txt
     
     # 检查燧原脚本是否存在
     ENFLAME_SCRIPT="FromEnflame/TopsRider_t2x_2.5.136_deb_amd64/ai_development_toolkit/distributed/llm_scripts_1.0.40/install_for_llm_scripts.sh"
     
     if [ -f "$ENFLAME_SCRIPT" ]; then
-        echo "🛠️  运行燧原依赖安装..."
+        echo "🛠️  运行燧原深度学习依赖安装..."
         cd FromEnflame/TopsRider_t2x_2.5.136_deb_amd64/ai_development_toolkit/distributed/llm_scripts_1.0.40/
         
         # 设置燧原环境变量
@@ -65,15 +70,16 @@ if [ -d "FromEnflame" ]; then
         export ENFLAME_UMD_FLAGS="mem_alloc_retry_times=1"
         
         # 运行燧原安装脚本
+        echo "🔧 安装torch_gcu, collie_lm, deepspeed等燧原专用库..."
         bash install_for_llm_scripts.sh
         
         cd ../../../../../../../../
-        echo "✅ 燧原环境配置完成"
+        echo "✅ 燧原T20环境配置完成"
     else
         echo "⚠️  燧原安装脚本未找到，请确保工具包完整"
     fi
 else
-    echo "💡 未检测到燧原工具包，仅配置通用GPU环境"
+    echo "💡 未检测到燧原工具包，使用通用GPU环境配置"
     echo "   如需燧原T20支持，请将工具包放置到 FromEnflame/ 目录"
 fi
 
