@@ -7,9 +7,13 @@ echo "🚀 ChatGLM3-6B 简化下载器"
 echo "适用于燧原T20环境"
 echo "=" * 50
 
-# 检查并创建模型目录
-BASE_DIR="/workspace/code/OntoThink_V4"
-MODEL_DIR="$BASE_DIR/enflame_training/models/THUDM/chatglm3-6b"
+# 检查并创建模型目录 - 自动检测路径
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENFLAME_ROOT="$(dirname "$SCRIPT_DIR")"
+ONTOTHINK_ROOT="$(dirname "$ENFLAME_ROOT")"
+MODEL_DIR="$ENFLAME_ROOT/models/THUDM/chatglm3-6b"
+
+echo "📁 项目根目录: $ONTOTHINK_ROOT"
 
 echo "📁 目标目录: $MODEL_DIR"
 

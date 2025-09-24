@@ -16,9 +16,13 @@ export ECCL_MAX_NCHANNELS=2
 export ENFLAME_UMD_FLAGS="mem_alloc_retry_times=1"
 
 # ============================== OntoThink训练配置 ================================
-# 基础路径
-ONTOTHINK_ROOT="/Users/barryzhang/myDev3/OntoThink_V4"
-ENFLAME_ROOT="${ONTOTHINK_ROOT}/enflame_training"
+# 基础路径 - 自动检测
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENFLAME_ROOT="$(dirname "$SCRIPT_DIR")"
+ONTOTHINK_ROOT="$(dirname "$ENFLAME_ROOT")"
+
+echo "📁 项目根目录: $ONTOTHINK_ROOT"
+echo "📁 燧原目录: $ENFLAME_ROOT"
 
 # 模型配置
 export PRETRAINED_MODEL_PATH=${PRETRAINED_MODEL_PATH:-"${ENFLAME_ROOT}/models/THUDM/chatglm3-6b"}
