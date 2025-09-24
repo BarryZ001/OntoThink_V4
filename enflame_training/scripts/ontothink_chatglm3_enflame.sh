@@ -86,12 +86,46 @@ fi
 # ============================== 启动训练 ================================
 echo "🔥 启动OntoThink ChatGLM3训练..."
 
-# 切换到燧原脚本目录
-cd ${ENFLAME_ROOT}/llm_scripts/finetuning/chatglm3
+# 查找并切换到燧原ChatGLM3脚本目录
+CHATGLM3_SCRIPT_DIRS=(
+    "${ONTOTHINK_ROOT}/FromEnflame/ai_development_toolkit/distributed/llm_scripts_1.0.40/finetuning/chatglm3"
+    "${ONTOTHINK_ROOT}/FromEnflame/distributed/llm_scripts_1.0.40/finetuning/chatglm3"
+    "${ENFLAME_ROOT}/llm_scripts/finetuning/chatglm3"
+)
+
+SCRIPT_DIR_FOUND=""
+for dir in "${CHATGLM3_SCRIPT_DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+        SCRIPT_DIR_FOUND="$dir"
+        echo "✅ 找到ChatGLM3脚本目录: $dir"
+        break
+    fi
+done
+
+if [ -z "$SCRIPT_DIR_FOUND" ]; then
+    echo "❌ 未找到ChatGLM3脚本目录，请检查燧原工具包安装"
+    echo "🔍 查找燧原工具包目录结构:"
+    find "${ONTOTHINK_ROOT}/FromEnflame" -name "*chatglm*" -type d 2>/dev/null | head -5
+    exit 1
+fi
+
+cd "$SCRIPT_DIR_FOUND"
+
+# 检查训练脚本是否存在
+TRAIN_SCRIPT="finetune_chatglm3_for_multiturn.py"
+if [ ! -f "$TRAIN_SCRIPT" ]; then
+    echo "❌ 未找到训练脚本: $TRAIN_SCRIPT"
+    echo "📂 当前目录内容:"
+    ls -la
+    echo "🔍 查找ChatGLM3相关脚本:"
+    find . -name "*chatglm*" -name "*.py" 2>/dev/null
+    exit 1
+fi
 
 # 备份原始训练脚本
 if [ ! -f "finetune_chatglm3_for_multiturn_original.py" ]; then
-    cp finetune_chatglm3_for_multiturn.py finetune_chatglm3_for_multiturn_original.py
+    cp "$TRAIN_SCRIPT" "finetune_chatglm3_for_multiturn_original.py"
+    echo "💾 已备份原始训练脚本"
 fi
 
 # 检测Python命令
