@@ -154,10 +154,22 @@ def main():
     print("🔧 OntoThink → 燧原ChatGLM3 数据格式转换器")
     print("=" * 50)
     
-    # 定义文件路径
-    base_dir = "/workspace/code/OntoThink_V4"
+    # 动态检测环境路径
+    current_dir = os.getcwd()
+    if "/workspace/code/OntoThink_V4" in current_dir:
+        # 服务端环境
+        base_dir = "/workspace/code/OntoThink_V4"
+    else:
+        # 本地环境，使用相对路径
+        base_dir = os.path.abspath(".")
+    
     input_dir = f"{base_dir}/backend/data/processed"
     output_dir = f"{base_dir}/enflame_training/datasets/ontothink_multiturn"
+    
+    print(f"📁 检测到环境: {'服务端' if '/workspace' in base_dir else '本地'}")
+    print(f"📂 基础目录: {base_dir}")
+    print(f"📥 输入目录: {input_dir}")
+    print(f"📤 输出目录: {output_dir}")
     
     # 确保输出目录存在
     os.makedirs(output_dir, exist_ok=True)
