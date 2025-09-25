@@ -85,6 +85,85 @@ def verify_file_integrity(filepath, min_size=None, expected_size=None):
     print_status(f"文件大小正常: {size} bytes", "success")
     return True
 
+def check_existing_model(model_dir):
+    """检查现有模型文件的完整性"""
+    print_status("检查现有模型文件...", "progress")
+    
+    if not os.path.exists(model_dir):
+        print_status("模型目录不存在", "info")
+        return {"need_download": True, "missing_files": []}
+    
+    os.chdir(model_dir)
+    
+    # 检查权重文件
+    weight_files_ok = 0
+    weight_files_total = 7
+    
+    print_status("检查权重文件...", "progress") 
+    for i in range(1, 8):
+        safetensor_file = f"model-0000{i}-of-00007.safetensors"
+        pytorch_file = f"pytorch_model-0000{i}-of-00007.bin"
+        
+        if os.path.exists(safetensor_file):
+            size = os.path.getsize(safetensor_file)
+            if size > 100_000_000:  # 大于100MB
+                print_status(f"权重文件 {i}: {safetensor_file} ({size:,} bytes)", "success")
+                weight_files_ok += 1
+            else:
+                print_status(f"权重文件 {i}: {safetensor_file} ({size} bytes) - 可能是LFS指针", "warning")
+        elif os.path.exists(pytorch_file):
+            size = os.path.getsize(pytorch_file)
+            if size > 100_000_000:  # 大于100MB  
+                print_status(f"权重文件 {i}: {pytorch_file} ({size:,} bytes)", "success")
+                weight_files_ok += 1
+            else:
+                print_status(f"权重文件 {i}: {pytorch_file} ({size} bytes) - 可能是LFS指针", "warning")
+        else:
+            print_status(f"权重文件 {i}: 缺失", "error")
+    
+    weights_complete = weight_files_ok >= weight_files_total
+    print_status(f"权重文件状态: {weight_files_ok}/{weight_files_total} 完整", 
+                "success" if weights_complete else "warning")
+    
+    # 检查tokenizer
+    tokenizer_ok = False
+    if os.path.exists("tokenizer.model"):
+        size = os.path.getsize("tokenizer.model")
+        if size > 1_000_000:  # 大于1MB
+            print_status(f"tokenizer.model: {size:,} bytes", "success")
+            tokenizer_ok = True
+        else:
+            print_status(f"tokenizer.model: {size} bytes - 过小", "warning")
+    else:
+        print_status("tokenizer.model: 缺失", "error")
+    
+    # 检查配置文件
+    config_files = [
+        "config.json", "tokenizer_config.json", "special_tokens_map.json",
+        "modeling_chatglm.py", "tokenization_chatglm.py", "configuration_chatglm.py"
+    ]
+    
+    missing_config = []
+    for config_file in config_files:
+        if os.path.exists(config_file):
+            print_status(f"配置文件: {config_file}", "success")
+        else:
+            print_status(f"配置文件: {config_file} - 缺失", "warning")
+            missing_config.append(config_file)
+    
+    # 决定是否需要重新下载
+    if weights_complete and tokenizer_ok and not missing_config:
+        print_status("模型文件完整，只需验证功能", "success")
+        return {"need_download": False, "missing_files": []}
+    elif weights_complete and (not tokenizer_ok or missing_config):
+        print_status("权重文件完整，只需下载配置文件", "info")
+        missing_files = ["tokenizer.model"] if not tokenizer_ok else []
+        missing_files.extend(missing_config)
+        return {"need_download": "partial", "missing_files": missing_files}
+    else:
+        print_status("模型文件不完整，需要完全重新下载", "warning")
+        return {"need_download": True, "missing_files": []}
+
 def test_tokenizer(model_dir):
     """测试tokenizer功能"""
     tokenizer_path = os.path.join(model_dir, "tokenizer.model")
@@ -127,8 +206,8 @@ def test_tokenizer(model_dir):
         return False
 
 def main():
-    print("🚀 ChatGLM3 手动下载器")
-    print("适用于燧原T20环境")
+    print("🚀 ChatGLM3 智能下载器")
+    print("适用于燧原T20环境 - 智能检查避免重复下载")
     print("=" * 50)
     
     # 确定模型目录
@@ -136,6 +215,9 @@ def main():
     model_dir = script_dir.parent / "models" / "THUDM" / "chatglm3-6b"
     
     print_status(f"目标目录: {model_dir}", "info")
+    
+    # 智能检查现有模型
+    check_result = check_existing_model(model_dir)
     
     # 创建目录
     model_dir.mkdir(parents=True, exist_ok=True)
@@ -203,42 +285,57 @@ def main():
         }
     }
     
-    # 下载文件
-    success_count = 0
-    total_files = len(files_to_download)
+    # 根据检查结果决定下载策略
+    if check_result["need_download"] == False:
+        print_status("🎉 所有文件都已存在且完整，跳过下载", "success")
+        success_count = len(files_to_download)
+        total_files = len(files_to_download)
+    elif check_result["need_download"] == "partial":
+        print_status(f"📋 只需要下载部分文件: {check_result['missing_files']}", "info")
+        # 只下载缺失的文件
+        files_to_download = {k: v for k, v in files_to_download.items() 
+                           if k in check_result['missing_files']}
+        success_count = 0
+        total_files = len(files_to_download)
+    else:
+        print_status("📥 需要下载所有文件", "info")
+        success_count = 0
+        total_files = len(files_to_download)
     
-    for filename, file_info in files_to_download.items():
-        print(f"\n📄 处理文件: {filename}")
-        
-        # 检查文件是否已存在且有效
-        if verify_file_integrity(filename, file_info["min_size"]):
-            print_status(f"{filename} 已存在且有效，跳过下载", "success")
-            success_count += 1
-            continue
-        
-        # 尝试下载
-        downloaded = False
-        for i, url in enumerate(file_info["urls"]):
-            print_status(f"尝试源 {i+1}/{len(file_info['urls'])}: {url.split('/')[-1]}", "progress")
+    # 下载文件
+    if check_result["need_download"] != False:
+        for filename, file_info in files_to_download.items():
+            print(f"\n📄 处理文件: {filename}")
             
-            if download_file_with_progress(url, filename):
-                if verify_file_integrity(filename, file_info["min_size"]):
-                    downloaded = True
-                    success_count += 1
-                    break
-                else:
-                    print_status("下载的文件无效，删除并尝试下一个源", "warning")
-                    try:
-                        os.remove(filename)
-                    except:
-                        pass
-            
-            time.sleep(1)  # 避免请求过快
+            # 检查文件是否已存在且有效
+            if verify_file_integrity(filename, file_info["min_size"]):
+                print_status(f"{filename} 已存在且有效，跳过下载", "success")
+                success_count += 1
+                continue
         
-        if not downloaded:
-            print_status(f"所有源都失败: {filename}", "error")
-            if file_info["critical"]:
-                print_status("这是关键文件，下载失败可能影响训练", "error")
+            # 尝试下载
+            downloaded = False
+            for i, url in enumerate(file_info["urls"]):
+                print_status(f"尝试源 {i+1}/{len(file_info['urls'])}: {url.split('/')[-1]}", "progress")
+                
+                if download_file_with_progress(url, filename):
+                    if verify_file_integrity(filename, file_info["min_size"]):
+                        downloaded = True
+                        success_count += 1
+                        break
+                    else:
+                        print_status("下载的文件无效，删除并尝试下一个源", "warning")
+                        try:
+                            os.remove(filename)
+                        except:
+                            pass
+                
+                time.sleep(1)  # 避免请求过快
+            
+            if not downloaded:
+                print_status(f"所有源都失败: {filename}", "error")
+                if file_info["critical"]:
+                    print_status("这是关键文件，下载失败可能影响训练", "error")
     
     # 总结
     print(f"\n{'='*50}")

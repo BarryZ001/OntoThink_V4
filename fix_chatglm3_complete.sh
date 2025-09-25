@@ -16,12 +16,105 @@ MODEL_DIR="${ONTOTHINK_ROOT}/enflame_training/models/THUDM/chatglm3-6b"
 echo "📁 项目根目录: $ONTOTHINK_ROOT"
 echo "📁 模型目录: $MODEL_DIR"
 
-# 彻底清理现有模型
+# 智能检查现有模型文件
 echo ""
-echo "🧹 彻底清理现有模型文件..."
+echo "🔍 智能检查现有模型文件..."
+NEED_FULL_DOWNLOAD=false
+
 if [ -d "$MODEL_DIR" ]; then
-    echo "🗑️  删除现有模型目录..."
-    rm -rf "$MODEL_DIR"
+    echo "📁 模型目录已存在，检查文件完整性..."
+    cd "$MODEL_DIR"
+    
+    # 检查关键配置文件
+    MISSING_CONFIG=false
+    for config_file in "config.json" "tokenizer_config.json" "modeling_chatglm.py" "tokenization_chatglm.py"; do
+        if [ ! -f "$config_file" ]; then
+            echo "❌ 缺失配置文件: $config_file"
+            MISSING_CONFIG=true
+        else
+            echo "✅ 配置文件存在: $config_file"
+        fi
+    done
+    
+    # 检查tokenizer.model
+    TOKENIZER_OK=false
+    if [ -f "tokenizer.model" ]; then
+        TOKENIZER_SIZE=$(stat -c%s "tokenizer.model")
+        echo "📋 tokenizer.model大小: $TOKENIZER_SIZE bytes"
+        
+        if [ "$TOKENIZER_SIZE" -gt 1000000 ]; then
+            echo "✅ tokenizer.model大小正常"
+            TOKENIZER_OK=true
+        else
+            echo "❌ tokenizer.model过小，可能是LFS指针文件"
+        fi
+    else
+        echo "❌ tokenizer.model不存在"
+    fi
+    
+    # 检查权重文件
+    WEIGHTS_OK=false
+    WEIGHT_COUNT=0
+    echo "🔍 检查权重文件..."
+    
+    for i in {1..7}; do
+        # 检查safetensors格式
+        safetensor_file="model-0000${i}-of-00007.safetensors"
+        pytorch_file="pytorch_model-0000${i}-of-00007.bin"
+        
+        if [ -f "$safetensor_file" ]; then
+            file_size=$(stat -c%s "$safetensor_file")
+            if [ "$file_size" -gt 100000000 ]; then  # 大于100MB
+                echo "✅ $safetensor_file: ${file_size} bytes"
+                ((WEIGHT_COUNT++))
+            else
+                echo "❌ $safetensor_file: ${file_size} bytes (可能是LFS指针)"
+            fi
+        elif [ -f "$pytorch_file" ]; then
+            file_size=$(stat -c%s "$pytorch_file")
+            if [ "$file_size" -gt 100000000 ]; then  # 大于100MB
+                echo "✅ $pytorch_file: ${file_size} bytes"
+                ((WEIGHT_COUNT++))
+            else
+                echo "❌ $pytorch_file: ${file_size} bytes (可能是LFS指针)"
+            fi
+        else
+            echo "❌ 权重文件 ${i} 不存在"
+        fi
+    done
+    
+    if [ "$WEIGHT_COUNT" -ge 7 ]; then
+        echo "✅ 权重文件完整 ($WEIGHT_COUNT/7)"
+        WEIGHTS_OK=true
+    else
+        echo "❌ 权重文件不完整 ($WEIGHT_COUNT/7)"
+    fi
+    
+    # 决定是否需要完全重新下载
+    if [ "$TOKENIZER_OK" = true ] && [ "$WEIGHTS_OK" = true ] && [ "$MISSING_CONFIG" = false ]; then
+        echo "🎉 模型文件基本完整，只需验证功能性"
+        NEED_FULL_DOWNLOAD=false
+    else
+        echo "⚠️  模型文件不完整，需要修复或重新下载"
+        NEED_FULL_DOWNLOAD=true
+    fi
+    
+else
+    echo "📁 模型目录不存在，需要完全下载"
+    NEED_FULL_DOWNLOAD=true
+fi
+
+# 只在必要时清理
+if [ "$NEED_FULL_DOWNLOAD" = true ]; then
+    echo ""
+    echo "🧹 清理不完整的模型文件..."
+    if [ -d "$MODEL_DIR" ]; then
+        echo "🗑️  删除现有模型目录..."
+        rm -rf "$MODEL_DIR"
+    fi
+else
+    echo ""
+    echo "✅ 保留现有模型文件，仅修复必要部分"
 fi
 
 # 清理Hugging Face缓存
@@ -46,16 +139,18 @@ cd "$MODEL_DIR"
 
 echo "📁 当前目录: $PWD"
 
-# 方法1: 使用git clone (最可靠的方法)
-echo ""
-echo "🔄 方法1: 使用git clone直接下载..."
-echo "这是最可靠的方法，会下载完整的仓库"
+# 根据检查结果决定下载策略
+if [ "$NEED_FULL_DOWNLOAD" = true ]; then
+    # 方法1: 使用git clone (最可靠的方法)
+    echo ""
+    echo "🔄 方法1: 使用git clone直接下载..."
+    echo "这是最可靠的方法，会下载完整的仓库"
 
-# 设置Git LFS环境
-export GIT_LFS_SKIP_SMUDGE=0
+    # 设置Git LFS环境
+    export GIT_LFS_SKIP_SMUDGE=0
 
-if git clone https://huggingface.co/THUDM/chatglm3-6b . --depth 1; then
-    echo "✅ Git clone成功"
+    if git clone https://huggingface.co/THUDM/chatglm3-6b . --depth 1; then
+        echo "✅ Git clone成功"
     
     # 检查Git LFS
     echo "🔍 检查Git LFS状态..."
@@ -83,8 +178,13 @@ if git clone https://huggingface.co/THUDM/chatglm3-6b . --depth 1; then
             echo "❌ 无法自动安装Git LFS，继续其他方法..."
         fi
     fi
+    else
+        echo "❌ Git clone失败，尝试其他方法..."
+    fi
 else
-    echo "❌ Git clone失败，尝试其他方法..."
+    echo ""
+    echo "✅ 权重文件已存在，跳过大文件下载"
+    echo "📋 只下载或修复必要的配置文件..."
 fi
 
 # 检查关键文件
