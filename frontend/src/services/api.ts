@@ -1,201 +1,217 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { toast } from 'react-hot-toast';
 
-// Create axios instance
+// API配置
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1';
+
+// 创建axios实例
 const api: AxiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api',
+  baseURL: API_BASE_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Request interceptor
+// 请求拦截器 - 添加认证token
 api.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
-    // Get token from localStorage
+  (config) => {
     const token = localStorage.getItem('authToken');
-    
-    // If token exists, add it to the headers
-    if (token && config.headers) {
+    if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
     return config;
   },
-  (error: AxiosError) => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
-// Response interceptor
+// 响应拦截器 - 处理错误
 api.interceptors.response.use(
   (response: AxiosResponse) => {
     return response;
   },
-  (error: AxiosError) => {
-    // Handle errors
+  (error) => {
     if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
+      // 服务器返回错误状态码
       const { status, data } = error.response;
       
-      // Handle specific status codes
-      switch (status) {
-        case 401:
-          // Unauthorized - redirect to login
-          if (window.location.pathname !== '/login') {
-            localStorage.removeItem('authToken');
-            window.location.href = '/login';
-          }
-          break;
-        case 403:
-          // Forbidden - show access denied
-          toast.error('您没有权限执行此操作');
-          break;
-        case 404:
-          // Not found
-          toast.error('请求的资源不存在');
-          break;
-        case 422:
-          // Validation errors
-          const validationErrors = (data as any).errors;
-          if (validationErrors) {
-            Object.values(validationErrors).forEach((errorMessage: any) => {
-              if (Array.isArray(errorMessage)) {
-                errorMessage.forEach((msg: string) => toast.error(msg));
-              } else {
-                toast.error(errorMessage);
-              }
-            });
-          } else {
-            toast.error('数据验证失败');
-          }
-          break;
-        case 500:
-          // Server error
-          toast.error('服务器内部错误，请稍后重试');
-          break;
-        default:
-          toast.error(`请求失败: ${status} ${error.message}`);
+      if (status === 401) {
+        // 未授权，清除token并跳转到登录页
+        localStorage.removeItem('authToken');
+        window.location.href = '/login';
+        toast.error('登录已过期，请重新登录');
+      } else if (status === 403) {
+        toast.error('权限不足');
+      } else if (status === 404) {
+        toast.error('请求的资源不存在');
+      } else if (status >= 500) {
+        toast.error('服务器错误，请稍后重试');
+      } else {
+        // 其他客户端错误
+        const message = data?.detail || data?.message || '请求失败';
+        toast.error(message);
       }
     } else if (error.request) {
-      // The request was made but no response was received
-      toast.error('无法连接到服务器，请检查您的网络连接');
+      // 网络错误
+      toast.error('网络连接失败，请检查网络');
     } else {
-      // Something happened in setting up the request that triggered an Error
-      toast.error(`请求错误: ${error.message}`);
+      // 其他错误
+      toast.error('请求失败，请稍后重试');
     }
     
     return Promise.reject(error);
   }
 );
 
+// 类型定义
+export interface LoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  access_token: string;
+  token_type: string;
+}
+
+export interface RegisterRequest {
+  username: string;
+  email: string;
+  password: string;
+  password_confirm: string;
+  full_name?: string;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  full_name?: string;
+  avatar?: string;
+  is_active: boolean;
+  created_at: string;
+  last_login?: string;
+}
+
+export interface ApiError {
+  detail: string;
+  message?: string;
+}
+
 // Auth API
 export const authApi = {
-  login: (email: string, password: string) => 
-    api.post('/auth/login', { email, password }),
+  // 登录
+  async login(credentials: LoginRequest): Promise<LoginResponse> {
+    // 使用FormData格式，符合OAuth2规范
+    const formData = new FormData();
+    formData.append('username', credentials.username);
+    formData.append('password', credentials.password);
     
-  register: (username: string, email: string, password: string) => 
-    api.post('/auth/register', { username, email, password }),
-    
-  getMe: () => 
-    api.get('/auth/me'),
-    
-  refreshToken: (refreshToken: string) => 
-    api.post('/auth/refresh-token', { refresh_token: refreshToken }),
-    
-  logout: () => 
-    api.post('/auth/logout'),
+    const response = await api.post<LoginResponse>('/auth/login', formData, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
+    return response.data;
+  },
+
+  // 注册
+  async register(userData: RegisterRequest): Promise<User> {
+    const response = await api.post<User>('/auth/register', userData);
+    return response.data;
+  },
+
+  // 获取当前用户信息
+  async getCurrentUser(): Promise<User> {
+    const response = await api.get<User>('/auth/me');
+    return response.data;
+  },
+
+  // 密码重置请求
+  async requestPasswordReset(email: string): Promise<{ message: string }> {
+    const response = await api.post('/auth/password-reset', { email });
+    return response.data;
+  },
+
+  // 确认密码重置
+  async confirmPasswordReset(token: string, newPassword: string): Promise<{ message: string }> {
+    const response = await api.post('/auth/password-reset/confirm', {
+      token,
+      new_password: newPassword,
+    });
+    return response.data;
+  },
 };
 
-// Thought Graph API
-export const thoughtGraphApi = {
-  // Get all thought graphs
-  getThoughtGraphs: () => 
-    api.get('/thought-graphs'),
+// 验证token有效性
+export const verifyToken = async (token: string): Promise<User | null> => {
+  try {
+    // 设置token到header
+    const tempApi = axios.create({
+      baseURL: API_BASE_URL,
+      timeout: 5000,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
     
-  // Get a single thought graph by ID
-  getThoughtGraph: (id: string) => 
-    api.get(`/thought-graphs/${id}`),
-    
-  // Create a new thought graph
-  createThoughtGraph: (data: any) => 
-    api.post('/thought-graphs', data),
-    
-  // Update a thought graph
-  updateThoughtGraph: (id: string, data: any) => 
-    api.put(`/thought-graphs/${id}`, data),
-    
-  // Delete a thought graph
-  deleteThoughtGraph: (id: string) => 
-    api.delete(`/thought-graphs/${id}`),
-    
-  // Get nodes for a thought graph
-  getNodes: (graphId: string) => 
-    api.get(`/thought-graphs/${graphId}/nodes`),
-    
-  // Create a new node
-  createNode: (graphId: string, data: any) => 
-    api.post(`/thought-graphs/${graphId}/nodes`, data),
-    
-  // Update a node
-  updateNode: (graphId: string, nodeId: string, data: any) => 
-    api.put(`/thought-graphs/${graphId}/nodes/${nodeId}`, data),
-    
-  // Delete a node
-  deleteNode: (graphId: string, nodeId: string) => 
-    api.delete(`/thought-graphs/${graphId}/nodes/${nodeId}`),
-    
-  // Get edges for a thought graph
-  getEdges: (graphId: string) => 
-    api.get(`/thought-graphs/${graphId}/edges`),
-    
-  // Create a new edge
-  createEdge: (graphId: string, data: any) => 
-    api.post(`/thought-graphs/${graphId}/edges`, data),
-    
-  // Delete an edge
-  deleteEdge: (graphId: string, edgeId: string) => 
-    api.delete(`/thought-graphs/${graphId}/edges/${edgeId}`),
+    const response = await tempApi.get<User>('/auth/me');
+    return response.data;
+  } catch (error) {
+    console.error('Token verification failed:', error);
+    return null;
+  }
 };
 
-// User API
-export const userApi = {
-  // Get user profile
-  getProfile: () => 
-    api.get('/users/me'),
-    
-  // Update user profile
-  updateProfile: (data: any) => 
-    api.put('/users/me', data),
-    
-  // Change password
-  changePassword: (currentPassword: string, newPassword: string) => 
-    api.post('/users/change-password', { currentPassword, newPassword }),
+// 哲学思考API (示例)
+export const philosophyApi = {
+  // 提交哲学问题
+  async submitQuestion(question: string): Promise<any> {
+    const response = await api.post('/philosophy/question', { question });
+    return response.data;
+  },
+
+  // 获取思考历史
+  async getThinkingHistory(): Promise<any[]> {
+    const response = await api.get('/philosophy/history');
+    return response.data;
+  },
+
+  // 获取推荐话题
+  async getRecommendedTopics(): Promise<any[]> {
+    const response = await api.get('/philosophy/topics');
+    return response.data;
+  },
 };
 
-// Template API
-export const templateApi = {
-  // Get all templates
-  getTemplates: () => 
-    api.get('/templates'),
-    
-  // Get a single template by ID
-  getTemplate: (id: string) => 
-    api.get(`/templates/${id}`),
-    
-  // Create a new template
-  createTemplate: (data: any) => 
-    api.post('/templates', data),
-    
-  // Update a template
-  updateTemplate: (id: string, data: any) => 
-    api.put(`/templates/${id}`, data),
-    
-  // Delete a template
-  deleteTemplate: (id: string) => 
-    api.delete(`/templates/${id}`),
+// 训练API
+export const trainingApi = {
+  // 获取训练状态
+  async getTrainingStatus(): Promise<any> {
+    const response = await api.get('/training/status');
+    return response.data;
+  },
+
+  // 开始训练
+  async startTraining(config: any): Promise<any> {
+    const response = await api.post('/training/start', config);
+    return response.data;
+  },
+
+  // 停止训练
+  async stopTraining(): Promise<any> {
+    const response = await api.post('/training/stop');
+    return response.data;
+  },
+
+  // 获取训练日志
+  async getTrainingLogs(): Promise<any[]> {
+    const response = await api.get('/training/logs');
+    return response.data;
+  },
 };
 
 export default api;

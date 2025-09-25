@@ -15,7 +15,7 @@ import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Contexts
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -28,11 +28,20 @@ const queryClient = new QueryClient({
   },
 });
 
-// Auth route wrapper
+// Auth route wrapper - 使用真实的认证状态
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  // In a real app, you would check if the user is authenticated
-  const isAuthenticated = true; // Replace with actual auth check
+  const { isAuthenticated, isLoading } = useAuth();
   
+  // 正在加载认证状态时显示加载界面
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-indigo-500"></div>
+      </div>
+    );
+  }
+  
+  // 未认证时重定向到登录页
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
